@@ -1,0 +1,21 @@
+$breakpoint-tablet: 600px;
+$breakpoint-desktop: 900px;
+$breakpoint-wide: 1200px;
+
+@mixin from-tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin from-desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin from-wide {
+  @media (min-width: $breakpoint-wide) {
+    @content;
+  }
+}
