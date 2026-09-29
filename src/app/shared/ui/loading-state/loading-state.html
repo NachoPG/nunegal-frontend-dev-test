@@ -1,0 +1,9 @@
+<div class="loading-state" role="status">
+  <div class="loading-state__main">
+    <span class="loading-state__spinner" aria-hidden="true"></span>
+    <span>{{ message() }}</span>
+  </div>
+  @if (isSlow() && slowMessage(); as notice) {
+    <p class="loading-state__notice">{{ notice }}</p>
+  }
+</div>

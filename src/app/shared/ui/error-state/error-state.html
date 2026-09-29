@@ -1,0 +1,10 @@
+<div class="error-state" role="alert">
+  <svg class="error-state__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path
+      fill="currentColor"
+      d="M12 2 1 21h22L12 2Zm0 4.7 7.53 12.8H4.47L12 6.7ZM11 10v5h2v-5h-2Zm0 6.5v2h2v-2h-2Z"
+    />
+  </svg>
+  <p class="error-state__message">{{ error().message }}</p>
+  <button type="button" class="error-state__retry" (click)="retry.emit()">Reintentar</button>
+</div>
