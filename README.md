@@ -3,6 +3,10 @@
 Mini single-page application for buying mobile devices: a product list with real-time search and a
 product detail view with option selection and add-to-cart.
 
+## Live demo
+
+The application is deployed on Netlify: <https://mobileshop-nunegal.netlify.app/>
+
 ## Requirements
 
 - Node.js `^22.22.3`, `^24.15.0` or `>=26` (required by Angular CLI 22).
