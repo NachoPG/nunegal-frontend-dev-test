@@ -1,0 +1,20 @@
+<a
+  class="product-card"
+  [routerLink]="['/product', product().id]"
+  [attr.aria-label]="product().brand + ' ' + product().model + ', ' + (product().price | price)"
+>
+  <span class="product-card__image-wrap">
+    <img
+      class="product-card__image"
+      [src]="product().imageUrl"
+      alt=""
+      [attr.loading]="priority() ? 'eager' : 'lazy'"
+      [attr.fetchpriority]="priority() ? 'high' : null"
+      decoding="async"
+    />
+  </span>
+
+  <span class="product-card__brand">{{ product().brand }}</span>
+  <span class="product-card__model">{{ product().model }}</span>
+  <span class="product-card__price">{{ product().price | price }}</span>
+</a>

@@ -1,0 +1,7 @@
+<ul class="product-grid">
+  @for (product of products(); track product.id; let i = $index) {
+    <li class="product-grid__item">
+      <app-product-card [product]="product" [priority]="isPriority(i)" />
+    </li>
+  }
+</ul>

@@ -1,0 +1,24 @@
+<section class="product-list-page">
+  <h1 class="product-list-page__title">Productos</h1>
+
+  @if (products.isLoading()) {
+    <app-loading-state message="Cargando productos…" [slowMessage]="slowNotice" />
+  } @else if (listError(); as error) {
+    <app-error-state [error]="error" (retry)="reload()" />
+  } @else if (products.value().length === 0) {
+    <app-empty-state message="No hay productos disponibles." />
+  } @else {
+    <div class="product-list-page__toolbar">
+      <p class="product-list-page__count">
+        {{ visibleProducts().length }} de {{ products.value().length }} productos
+      </p>
+      <app-search-bar [(term)]="searchTerm" [resultCount]="visibleProducts().length" />
+    </div>
+
+    @if (visibleProducts().length === 0) {
+      <app-empty-state [message]="'No hay productos que coincidan con «' + searchTerm() + '».'" />
+    } @else {
+      <app-product-grid [products]="visibleProducts()" />
+    }
+  }
+</section>

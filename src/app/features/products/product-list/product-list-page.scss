@@ -1,0 +1,32 @@
+@use 'styles/breakpoints' as bp;
+
+.product-list-page {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+.product-list-page__title {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-4);
+}
+
+.product-list-page__toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+  margin-bottom: var(--space-5);
+
+  @include bp.from-tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.product-list-page__count {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
