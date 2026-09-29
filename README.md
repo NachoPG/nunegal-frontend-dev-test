@@ -32,3 +32,20 @@ La aplicación queda disponible en <http://localhost:4200/>.
 
 Angular 22 (componentes standalone, signals, zoneless), `httpResource` para las lecturas, SCSS propio
 sin librería de componentes, Vitest, ESLint y Prettier.
+
+## Notas
+
+- **Contador de la cesta.** La API calcula `count` a partir de una cookie de sesión que el navegador
+  no puede enviar desde otro origen (responde con `Access-Control-Allow-Origin: *` y sin credenciales),
+  así que desde la aplicación siempre devuelve `1`. Por eso el contador se acumula en `localStorage`
+  con el `count` de cada respuesta.
+- **Caché.** Las respuestas del listado y del detalle se guardan en `localStorage` durante 1 hora; al
+  caducar se vuelven a pedir a la API.
+- **Datos de la API.** Se normalizan antes de mostrarse: `displayResolution` y `displaySize` vienen
+  intercambiados, hay campos que llegan como texto, como array o vacíos, y algunos productos no tienen
+  precio. Un registro defectuoso no rompe el listado: se descarta solo ese registro.
+- **Producto inexistente.** La API responde `500` (no `404`); la aplicación muestra «Producto no
+  encontrado».
+- **Arranque en frío.** La API está en Render y puede tardar cerca de un minuto en responder tras un
+  rato inactiva. Si una carga supera los 4 segundos se muestra un aviso, y a los 60 segundos la
+  petición se cancela con la opción de reintentar.
