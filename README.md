@@ -1,51 +1,49 @@
 # nunegal-frontend-dev-test
 
-Mini-aplicación (SPA) para comprar dispositivos móviles: listado de productos con búsqueda en tiempo
-real y vista de detalle con selección de opciones y alta en la cesta.
+Mini single-page application for buying mobile devices: a product list with real-time search and a
+product detail view with option selection and add-to-cart.
 
-> El enunciado pide React/Preact; la empresa confirmó que la prueba podía realizarse con **Angular**.
+## Requirements
 
-## Requisitos
-
-- Node.js `^22.22.3`, `^24.15.0` o `>=26` (exigido por Angular CLI 22).
+- Node.js `^22.22.3`, `^24.15.0` or `>=26` (required by Angular CLI 22).
 - npm 11.
 
-## Ejecución
+## Getting started
 
 ```bash
 npm install
 npm start
 ```
 
-La aplicación queda disponible en <http://localhost:4200/>.
+The application is available at <http://localhost:4200/>.
 
 ## Scripts
 
-| Script          | Descripción                                       |
-| --------------- | ------------------------------------------------- |
-| `npm start`     | Servidor de desarrollo.                           |
-| `npm run build` | Compilación de producción en `dist/`.             |
-| `npm test`      | Tests unitarios (Vitest).                         |
-| `npm run lint`  | Comprobación de código (ESLint + angular-eslint). |
+| Script          | Description                             |
+| --------------- | --------------------------------------- |
+| `npm start`     | Development server.                     |
+| `npm run build` | Production build in `dist/`.            |
+| `npm test`      | Unit tests (Vitest).                    |
+| `npm run lint`  | Code linting (ESLint + angular-eslint). |
 
 ## Stack
 
-Angular 22 (componentes standalone, signals, zoneless), `httpResource` para las lecturas, SCSS propio
-sin librería de componentes, Vitest, ESLint y Prettier.
+Angular 22 (standalone components, signals, zoneless), `httpResource` for data fetching, custom SCSS
+without a component library, Vitest, ESLint and Prettier.
 
-## Notas
+## Notes
 
-- **Contador de la cesta.** La API calcula `count` a partir de una cookie de sesión que el navegador
-  no puede enviar desde otro origen (responde con `Access-Control-Allow-Origin: *` y sin credenciales),
-  así que desde la aplicación siempre devuelve `1`. Por eso el contador se acumula en `localStorage`
-  con el `count` de cada respuesta.
-- **Caché.** Las respuestas del listado y del detalle se guardan en `localStorage` durante 1 hora; al
-  caducar se vuelven a pedir a la API.
-- **Datos de la API.** Se normalizan antes de mostrarse: `displayResolution` y `displaySize` vienen
-  intercambiados, hay campos que llegan como texto, como array o vacíos, y algunos productos no tienen
-  precio. Un registro defectuoso no rompe el listado: se descarta solo ese registro.
-- **Producto inexistente.** La API responde `500` (no `404`); la aplicación muestra «Producto no
-  encontrado».
-- **Arranque en frío.** La API está en Render y puede tardar cerca de un minuto en responder tras un
-  rato inactiva. Si una carga supera los 4 segundos se muestra un aviso, y a los 60 segundos la
-  petición se cancela con la opción de reintentar.
+- **Cart counter.** The API computes `count` from a session cookie that the browser cannot send from
+  another origin (it responds with `Access-Control-Allow-Origin: *` and no credentials), so from the
+  application it always returns `1`. The counter is therefore accumulated in `localStorage` with the
+  `count` of each response.
+- **Cache.** Product list and detail responses are stored in `localStorage` for 1 hour; once expired,
+  they are requested from the API again.
+- **API data.** Data is normalized before being displayed: `displayResolution` and `displaySize` come
+  swapped, some fields arrive as a string, as an array or empty, and some products have no price. A
+  malformed record does not break the list: only that record is discarded.
+- **Unknown product.** The API responds `500` (not `404`); the application shows a "product not
+  found" state.
+- **Cold start.** The API is hosted on Render and can take about a minute to respond after being idle.
+  If loading takes longer than 4 seconds a notice is shown, and after 60 seconds the request is
+  cancelled with the option to retry.
