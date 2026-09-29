@@ -26,6 +26,20 @@ The application is available at <http://localhost:4200/>.
 | `npm test`      | Unit tests (Vitest).                    |
 | `npm run lint`  | Code linting (ESLint + angular-eslint). |
 
+## Deployment (Netlify)
+
+The repository includes a [`netlify.toml`](netlify.toml) that configures the build
+(`npm run build`), the publish directory (`dist/nunegal-frontend-dev-test/browser`), Node 22, the SPA
+fallback to `index.html` (needed for direct access to routes such as `/product/:id`) and cache/security
+headers.
+
+To deploy, import the repository in Netlify (**Add new site → Import an existing project**); no
+extra settings are needed. Alternatively, with the Netlify CLI:
+
+```bash
+npx netlify-cli deploy --build --prod
+```
+
 ## Stack
 
 Angular 22 (standalone components, signals, zoneless), `httpResource` for data fetching, custom SCSS
