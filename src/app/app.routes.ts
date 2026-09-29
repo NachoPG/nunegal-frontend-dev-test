@@ -7,5 +7,13 @@ export const routes: Routes = [
       import('./features/products/product-list/product-list-page').then((m) => m.ProductListPage),
     title: 'Productos · Tienda de móviles',
   },
+  {
+    path: 'product/:id',
+    loadComponent: () =>
+      import('./features/products/product-detail/product-detail-page').then(
+        (m) => m.ProductDetailPage,
+      ),
+    title: 'Detalle del producto · Tienda de móviles',
+  },
   { path: '**', redirectTo: '' },
 ];

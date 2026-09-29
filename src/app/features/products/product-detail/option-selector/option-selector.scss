@@ -1,0 +1,58 @@
+.option-selector {
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--space-4);
+}
+
+.option-selector__legend {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: var(--space-2);
+  padding: 0;
+}
+
+.option-selector__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.option-selector__option {
+  position: relative;
+  cursor: pointer;
+
+  &:focus-within .option-selector__chip {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+.option-selector__input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.option-selector__chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  background: var(--color-surface);
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.option-selector__input:checked + .option-selector__chip {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  font-weight: 600;
+}

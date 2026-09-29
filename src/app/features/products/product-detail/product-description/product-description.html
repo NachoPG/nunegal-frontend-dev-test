@@ -1,0 +1,50 @@
+<dl class="product-description">
+  <div class="product-description__row">
+    <dt>Marca</dt>
+    <dd>{{ product().brand }}</dd>
+  </div>
+  <div class="product-description__row">
+    <dt>Modelo</dt>
+    <dd>{{ product().model }}</dd>
+  </div>
+  <div class="product-description__row">
+    <dt>Precio</dt>
+    <dd>{{ product().price | price }}</dd>
+  </div>
+  <div class="product-description__row">
+    <dt>CPU</dt>
+    <dd>{{ cpu() }}</dd>
+  </div>
+  <div class="product-description__row">
+    <dt>RAM</dt>
+    <dd>{{ ram() }}</dd>
+  </div>
+  <div class="product-description__row">
+    <dt>Sistema operativo</dt>
+    <dd>{{ os() }}</dd>
+  </div>
+  <div class="product-description__row">
+    <dt>Resolución de pantalla</dt>
+    <dd>{{ screenResolution() }}</dd>
+  </div>
+  <div class="product-description__row">
+    <dt>Batería</dt>
+    <dd>{{ battery() }}</dd>
+  </div>
+  <div class="product-description__row">
+    <dt>Cámaras</dt>
+    <dd>
+      @for (line of cameras(); track line) {
+        <span class="product-description__line">{{ line }}</span>
+      }
+    </dd>
+  </div>
+  <div class="product-description__row">
+    <dt>Dimensiones</dt>
+    <dd>{{ dimensions() }}</dd>
+  </div>
+  <div class="product-description__row">
+    <dt>Peso</dt>
+    <dd>{{ weight() }}</dd>
+  </div>
+</dl>

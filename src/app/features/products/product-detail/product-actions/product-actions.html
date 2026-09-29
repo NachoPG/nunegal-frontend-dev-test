@@ -1,0 +1,22 @@
+<div class="product-actions">
+  <app-option-selector
+    legend="Almacenamiento"
+    name="storage"
+    [options]="storages()"
+    [(selected)]="selectedStorage"
+  />
+  <app-option-selector
+    legend="Color"
+    name="color"
+    [options]="colors()"
+    [(selected)]="selectedColor"
+  />
+
+  @if (!canAdd() && !isAdding()) {
+    <p class="product-actions__hint">Selecciona almacenamiento y color.</p>
+  }
+
+  <button type="button" class="product-actions__submit" [disabled]="!canAdd()" (click)="onSubmit()">
+    {{ isAdding() ? 'Añadiendo…' : 'Añadir a la cesta' }}
+  </button>
+</div>

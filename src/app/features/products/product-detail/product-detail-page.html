@@ -1,0 +1,37 @@
+<section class="product-detail-page">
+  <a class="product-detail-page__back" routerLink="/">← Volver al listado</a>
+
+  @if (product.isLoading()) {
+    <app-loading-state message="Cargando producto…" [slowMessage]="slowNotice" />
+  } @else if (detailError(); as error) {
+    <app-error-state [error]="error" (retry)="reload()" />
+  } @else if (product.value(); as p) {
+    <div class="product-detail-page__layout">
+      <app-product-image [src]="p.imageUrl" [alt]="p.brand + ' ' + p.model" />
+
+      <div class="product-detail-page__details">
+        <h1 class="product-detail-page__title">{{ p.brand }} {{ p.model }}</h1>
+
+        <app-product-description [product]="p" />
+
+        <app-product-actions
+          [colors]="p.colors"
+          [storages]="p.storages"
+          [status]="addStatus()"
+          (add)="onAdd($event)"
+        />
+
+        @if (addMessage(); as message) {
+          <p
+            class="product-detail-page__message"
+            [class.product-detail-page__message--error]="addStatus() === 'error'"
+            [attr.role]="addStatus() === 'error' ? 'alert' : 'status'"
+            aria-live="polite"
+          >
+            {{ message }}
+          </p>
+        }
+      </div>
+    </div>
+  }
+</section>
