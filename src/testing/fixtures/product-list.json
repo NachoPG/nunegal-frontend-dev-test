@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ZmGrkLRPXOTpxsU4jjAcv",
+    "brand": "Acer",
+    "model": "Iconia Talk S",
+    "price": "170",
+    "imgUrl": "https://itx-frontend-test.onrender.com/images/ZmGrkLRPXOTpxsU4jjAcv.jpg"
+  },
+  {
+    "id": "cGjFJlmqNPIwU59AOcY8H",
+    "brand": "Acer",
+    "model": "Liquid Z6 Plus",
+    "price": "250",
+    "imgUrl": "https://itx-frontend-test.onrender.com/images/cGjFJlmqNPIwU59AOcY8H.jpg"
+  },
+  {
+    "id": "AasKFs5EGbyAEIKkcHQcF",
+    "brand": "alcatel",
+    "model": "Flash (2017)",
+    "price": "",
+    "imgUrl": "https://itx-frontend-test.onrender.com/images/AasKFs5EGbyAEIKkcHQcF.jpg"
+  },
+  {
+    "id": "pMZMhe_ZaAPZoaCCtlDrg",
+    "brand": "Acer",
+    "model": "Liquid Jade 2",
+    "price": "",
+    "imgUrl": "https://itx-frontend-test.onrender.com/images/pMZMhe_ZaAPZoaCCtlDrg.jpg"
+  },
+  {
+    "id": "-1rZk60UZw3B3lJIDVDjv",
+    "brand": "Acer",
+    "model": "Iconia A1-830",
+    "price": "130",
+    "imgUrl": "https://itx-frontend-test.onrender.com/images/-1rZk60UZw3B3lJIDVDjv.jpg"
+  },
+  {
+    "id": "g18mWn2tnbOq2HJx98pTb",
+    "brand": "Acer",
+    "model": "Iconia Tab A700",
+    "price": "230",
+    "imgUrl": "https://itx-frontend-test.onrender.com/images/g18mWn2tnbOq2HJx98pTb.jpg"
+  }
+]

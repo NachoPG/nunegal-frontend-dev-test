@@ -1,0 +1,53 @@
+{
+  "id": "-1rZk60UZw3B3lJIDVDjv",
+  "brand": "Acer",
+  "model": "Iconia A1-830",
+  "price": "130",
+  "imgUrl": "https://itx-frontend-test.onrender.com/images/-1rZk60UZw3B3lJIDVDjv.jpg",
+  "networkTechnology": "No cellular connectivity",
+  "networkSpeed": "",
+  "gprs": "No",
+  "edge": "No",
+  "announced": "2014  January",
+  "status": "Available. Released 2014  March",
+  "dimentions": "203 x 138.4 x 8.2 mm (7.99 x 5.45 x 0.32 in)",
+  "weight": "380",
+  "sim": "No",
+  "displayType": "LED-backlit IPS LCD capacitive touchscreen  16M colors",
+  "displayResolution": "7.9 inches (~68.8% screen-to-body ratio)",
+  "displaySize": "768 x 1024 pixels (~162 ppi pixel density)",
+  "os": "Android 4.2 (Jelly Bean)",
+  "cpu": "Dual-core 1.6 GHz",
+  "chipset": "Intel Atom Z2560",
+  "gpu": "PowerVR SGX544MP2",
+  "externalMemory": "microSD  up to 32 GB (dedicated slot)",
+  "internalMemory": ["16 GB"],
+  "ram": "1 GB RAM",
+  "primaryCamera": ["5 MP", "autofocus"],
+  "secondaryCmera": "2 MP",
+  "speaker": "Yes",
+  "audioJack": "Yes",
+  "wlan": "Wi-Fi 802.11 b/g/n",
+  "bluetooth": "3.0",
+  "gps": "Yes",
+  "nfc": "",
+  "radio": "No",
+  "usb": "microUSB 2.0",
+  "sensors": "Accelerometer",
+  "battery": "Non-removable Li-Ion 4000 mAh battery",
+  "colors": ["White"],
+  "options": {
+    "colors": [
+      {
+        "code": 1000,
+        "name": "White"
+      }
+    ],
+    "storages": [
+      {
+        "code": 2000,
+        "name": "16 GB"
+      }
+    ]
+  }
+}
