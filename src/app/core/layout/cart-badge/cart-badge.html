@@ -1,0 +1,13 @@
+<span
+  class="cart-badge"
+  role="status"
+  [attr.aria-label]="'Cesta: ' + count() + (count() === 1 ? ' producto' : ' productos')"
+>
+  <svg class="cart-badge__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path
+      fill="currentColor"
+      d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44A2 2 0 0 0 10 19h9v-2h-9l1.1-2h6.45a2 2 0 0 0 1.78-1.11l3.24-6.49A1 1 0 0 0 21.68 6H6.42l-.94-2H7ZM7 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm10 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"
+    />
+  </svg>
+  <span class="cart-badge__count">{{ count() }}</span>
+</span>
